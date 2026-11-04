@@ -1,0 +1,80 @@
+================================================================================
+ PSPify - third-party software notices
+================================================================================
+
+PSPify is free software released under the GNU General Public License,
+version 3 (see LICENSE.txt). You may redistribute and modify it under those
+terms. It comes with NO WARRANTY.
+
+PSPify source code:  https://github.com/gamezawy/PSPify
+
+--------------------------------------------------------------------------------
+Programs PSPify uses but does NOT include
+--------------------------------------------------------------------------------
+
+PSPify does not contain or distribute these programs. You install them yourself
+(see README.txt); PSPify starts them as separate programs when it needs them,
+and they stay under their own licences.
+
+FFmpeg   https://ffmpeg.org
+  Used to decode your music files. Licensed under the LGPL or the GPL
+  depending on how the copy you installed was built: https://ffmpeg.org/legal.html
+
+atracdenc   https://github.com/dcherednik/atracdenc
+  Used for Sony ATRAC3 encoding. See the project page for its licence.
+
+--------------------------------------------------------------------------------
+Libraries used by the PSPify program itself
+--------------------------------------------------------------------------------
+
+PyQt   https://www.riverbankcomputing.com/software/pyqt/
+  User interface bindings. Licensed under the GNU GPL version 3 (or a commercial
+  licence from Riverbank Computing).
+Qt     https://www.qt.io
+  Licensed under the GNU LGPL version 3 / GPL, by The Qt Company and contributors.
+Pillow   https://python-pillow.org
+  Image processing. Licensed under the HPND licence.
+Python   https://www.python.org
+  Licensed under the Python Software Foundation License.
+
+--------------------------------------------------------------------------------
+Icons
+--------------------------------------------------------------------------------
+
+Most of the small interface icons in Resources/SVG (settings, layers, grid,
+trash, refresh, plus, check, folder, search) are taken from Feather icons,
+https://feathericons.com, used under the MIT licence:
+
+  Copyright (c) 2013-2017 Cole Bemis
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+--------------------------------------------------------------------------------
+Code and data PSPify is based on
+--------------------------------------------------------------------------------
+
+GBA2PSP   http://github.com/sahlberg/gba2psp
+  PBOOT.PBP processing and audio processing code are based on this project.
+TempGBA4PSP-Single-game   https://github.com/GrabowskiDev/TempGBA4PSP-Single-game
+  The PBOOT.PBP structure was initially sourced from this project and modified
+  for custom assets.
+
+Names such as PSP, PlayStation, FFmpeg and Qt belong to their respective owners
+and are used only to describe compatibility.
+================================================================================

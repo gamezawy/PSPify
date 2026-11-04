@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+build/
+dist/
+.venv/
+# created next to the app at run time
+Output/
+config.json
+config.json.bak
+id_map.json
+PSPify.log
+PSPify-crash.log

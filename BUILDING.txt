@@ -1,0 +1,59 @@
+BUILDING AND DEVELOPING PSPify
+==============================
+
+Project layout
+--------------
+pspify_core.py      Backend: config, game IDs, assets, PBP building, conversion.
+                    No Qt. Can also run headless:  python pspify_core.py
+pspify_theme.py     Themes (colour tables), stylesheet template, palette, tinted icons.
+pspify_qt.py        The only file that knows about PyQt6 vs PyQt5.
+pspify_widgets.py   Reusable widgets (alerts, status chips, SystemCard ...).
+pspify_gui.py       Main window, the three pages, entry point:  python pspify_gui.py
+Resources/          PBOOT.PBP template, Config.zip (emulator config templates),
+                    Icon/, SVG/ (one template per icon, recoloured by the theme).
+Themes/             Optional user themes (JSON), see README.txt section 6.
+THIRD_PARTY_NOTICES.txt  licence notices shipped with the app
+tests/              python -m unittest discover -s tests
+
+Run from source
+---------------
+    python -m venv .venv && . .venv/bin/activate        (Windows: .venv\Scripts\activate)
+    pip install -r requirements-pyqt6.txt               (or requirements-pyqt5.txt)
+    python pspify_gui.py
+
+PyQt6 is used when installed, otherwise PyQt5. Force PyQt5 with PSPIFY_QT=5.
+Linux with PyQt6 on X11 needs libxcb-cursor0 (sudo apt install libxcb-cursor0).
+
+Run the tests
+-------------
+    python -m unittest discover -s tests
+
+Optional, with real emulator files:  PSPIFY_EBOOT_DIR=/folder/of/ebootsonly python -m unittest tests.test_real_ebooks
+
+The GUI tests use real Qt (offscreen) when PyQt is installed and a small stand-in
+otherwise, so the flows (add / edit / remove a system, convert, change theme)
+run on any machine.
+
+Build an executable
+-------------------
+ffmpeg and atracdenc are NOT bundled: users install them (README.txt section 1), so no
+third-party tool is redistributed and none of their licences has to be shipped.
+
+1. pip install pyinstaller
+2. Normal build (PyQt6):       pyinstaller PSPify.spec
+   Legacy build (PyQt5):       pyinstaller "PSPify (Legacy).spec"
+   The build stops if THIRD_PARTY_NOTICES.txt still contains a "<<FILL IN" field. The
+   result is in dist/. On first start the app places README.txt, LICENSE.txt and
+   THIRD_PARTY_NOTICES.txt next to the EXE. Copy the Themes/ folder next to it if you want
+   to ship the example theme.
+3. Publish the PSPify source (the GPL requires it) at the URL given in the notices.
+
+Testing the audio path locally: install ffmpeg and atracdenc, or put them in a Tools folder
+next to the app, or pick them in Settings > Audio tools.
+
+Things to check before publishing
+---------------------------------
+- Redistribution terms of Resources/PBOOT.PBP (taken from TempGBA4PSP-Single-game),
+  the templates inside Resources/Config.zip and the artwork in Resources/Icon. The small
+  UI icons in Resources/SVG are Feather icons (MIT); their notice is in THIRD_PARTY_NOTICES.txt.
+- Test the built executable on a clean machine without Python.

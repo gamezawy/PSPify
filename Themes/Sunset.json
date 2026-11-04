@@ -1,0 +1,12 @@
+{
+    "name": "Sunset",
+    "base": "Dark",
+    "colors": {
+        "bg": "#14100F",
+        "sidebar": "#1A1413",
+        "card": "#211918",
+        "input": "#2B2120",
+        "border": "#3A2D2B",
+        "accent": "#FF7A45"
+    }
+}
